@@ -27,7 +27,7 @@ public class SecurityConfig {
       public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
             http.csrf(c -> c.disable()).cors(Customizer.withDefaults())
                         .authorizeHttpRequests(a -> a
-                                    .requestMatchers("/students/login", "/students/register", "/error", "/uploads/**").permitAll()
+                                    .requestMatchers("/", "/health", "/students/login", "/students/register", "/error", "/uploads/**").permitAll()
                                     .requestMatchers("/students/**").hasRole("ADMIN") // user management: admin only
                                     .anyRequest().authenticated()) // fine-grained rules via @PreAuthorize
                         .exceptionHandling(e -> e.authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED)))
