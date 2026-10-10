@@ -1,0 +1,11 @@
+{
+  "info": {"name": "CS_AB Student Placement API", "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"},
+  "variable": [{"key":"baseUrl","value":"http://localhost:8080"},{"key":"token","value":""}],
+  "item": [
+    {"name":"Register","request":{"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\"name\":\"Rahul Kumar\",\"role\":\"STUDENT\",\"email\":\"rahul@example.com\",\"password\":\"123456\"}"},"url":"{{baseUrl}}/students/register"}},
+    {"name":"Login","request":{"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\"email\":\"rahul@example.com\",\"password\":\"123456\"}"},"url":"{{baseUrl}}/students/login"}},
+    {"name":"Get Students","request":{"method":"GET","header":[{"key":"Authorization","value":"Bearer {{token}}"}],"url":"{{baseUrl}}/students"}},
+    {"name":"Get Departments","request":{"method":"GET","header":[{"key":"Authorization","value":"Bearer {{token}}"}],"url":"{{baseUrl}}/departments"}},
+    {"name":"Get Student 1","request":{"method":"GET","header":[{"key":"Authorization","value":"Bearer {{token}}"}],"url":"{{baseUrl}}/students/1"}}
+  ]
+}
