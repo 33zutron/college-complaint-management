@@ -23,7 +23,10 @@ import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/students") // localhost:8080/students
-@CrossOrigin(origins = "${app.frontend-url:http://localhost:5173}")
+@CrossOrigin(origins = {
+      "${app.frontend-url:http://localhost:5173}",
+      "https://college-complaint-management-live.vercel.app"
+})
 public class StudentController {
 
       @Autowired

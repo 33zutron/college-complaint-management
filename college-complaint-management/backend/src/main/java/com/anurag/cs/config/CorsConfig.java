@@ -17,7 +17,11 @@ public class CorsConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(Arrays.asList(frontendUrl, "http://localhost:5173", "http://localhost:5174"));
+        config.setAllowedOrigins(Arrays.asList(
+                frontendUrl,
+                "https://college-complaint-management-live.vercel.app",
+                "http://localhost:5173",
+                "http://localhost:5174"));
         config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         config.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type", "Accept"));
         config.setAllowCredentials(true);
